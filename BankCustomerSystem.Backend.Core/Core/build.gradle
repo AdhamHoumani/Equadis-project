@@ -1,0 +1,61 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.core'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+ext {
+	springBootVersion = '2.6.2'
+}
+
+repositories {
+	mavenCentral()
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	maven { url 'http://jpos.org/maven'; allowInsecureProtocol = true }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	annotationProcessor 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework:spring-context'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.flywaydb:flyway-core:8.4.2'
+	implementation 'org.modelmapper:modelmapper:3.0.0'
+	implementation 'org.apache.commons:commons-lang3:3.0'
+	implementation 'org.json:json:20211205'
+	implementation 'org.hibernate:hibernate-envers:5.6.1.Final'
+	implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+	implementation "org.springframework.boot:spring-boot-actuator:${springBootVersion}"
+	implementation 'com.vladmihalcea:hibernate-types-55:2.14.0'
+	implementation 'org.mapstruct:mapstruct:1.5.0.Beta2'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Beta2'
+	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+	implementation 'org.hibernate:hibernate-envers:5.6.1.Final'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.2'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.7.2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.2'
+	implementation 'commons-io:commons-io:2.11.0'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.1.0'
+	implementation 'io.github.openfeign:feign-okhttp:12.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
