@@ -1,0 +1,19 @@
+Business:
+This is a Bank Customer Management System that allows users to add/remove/edit customers/accounts and perform deposit/withdraw transactions.
+Validations are performed on each form and action. In the customer model,
+the email and phone number are unique fields for each customer. Each customer can have multiple accounts, 
+and if we try to delete a customer with active accounts, a warning message will be displayed.
+Other scenarios have also been taken into consideration.
+
+Technical:
+Backend: (Spring Boot 2.6.3/Java 17)
+There are two microservices: Core and Finance. 
+The Core microservice is responsible for handling customer actions (add/delete/edit/checking/get),
+while the Finance microservice is responsible for handling account and transaction actions (add/delete/edit/checking/get).
+
+Main libraries: FlywayDB, ModelMapper, Hibernate, and Feign.
+
+Frontend: (Angular 14)
+The lazy loading pattern is used to optimize the loading of resources.
+Generic helpers and services have been designed and created, such as HttpHelper, ToastrHelper, CommunicationService, SharedService, and InterceptorHelper.
+Clean and generic functions have been created to communicate with the backend and handle API responses.

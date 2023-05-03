@@ -9,3 +9,4 @@ this project depends on external database using postgreSQL 12 (port 5432)
 to run app & connect with the db we should create database with name bank_customer_system_db
 and create 2 schema in this db : core & finance
 then after run the app, flyway library will migrate the database and create tables ...
+to run angular app I preffer to use docker image, and downloads it from docker hub link (provided on the email)
